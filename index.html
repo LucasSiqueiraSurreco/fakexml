@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download de XML</title>
+</head>
+<body>
+  <button id="downloadButton">Baixar XML</button>
+
+  <script>
+    document.getElementById('downloadButton').addEventListener('click', () => {
+      const randomChNFe = generateRandomChNFe();
+      const randomNProt = generateRandomNProt();
+      const randomDigVal = generateRandomDigVal();
+      const randomInfProtId = generateRandomInfProtId()
+
+      const xmlContent = `
+      <nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+<infNFe versao="4.00" Id="NFe52240621294708000415550020000707301000525309">
+<ide>
+<cUF>52</cUF>
+<cNF>00052530</cNF>
+<natOp>REMESSA P/FORMACAO DE LOTE DE EXPORTACAO</natOp>
+<mod>55</mod>
+<serie>2</serie>
+<nNF>70730</nNF>
+<dhEmi>2024-06-07T15:19:56-03:00</dhEmi>
+<dhSaiEnt>2024-06-07T15:19:56-03:00</dhSaiEnt>
+<tpNF>1</tpNF>
+<idDest>2</idDest>
+<cMunFG>5218805</cMunFG>
+<tpImp>1</tpImp>
+<tpEmis>1</tpEmis>
+<cDV>9</cDV>
+<tpAmb>1</tpAmb>
+<finNFe>1</finNFe>
+<indFinal>0</indFinal>
+<indPres>0</indPres>
+<procEmi>0</procEmi>
+<verProc>1.0</verProc>
+<NFref>
+<refNFe>52240600671009000558550010000428581159418477</refNFe>
+</NFref>
+</ide>
+<emit>
+<CNPJ>21294708000415</CNPJ>
+<xNome>CJ INTERNATIONAL BRASIL COM. AGRICOLA LTDA. - RIO VERDE</xNome>
+<xFant>CJ INTERNATIONAL BRASIL COM. AGRICOLA LTDA. - RIO VERDE</xFant>
+<enderEmit>
+<xLgr>AVENIDA PRESIDENTE VARGAS</xLgr>
+<nro>266</nro>
+<xCpl>SALA 804</xCpl>
+<xBairro>JARDIM MARCONAL</xBairro>
+<cMun>5218805</cMun>
+<xMun>RIO VERDE</xMun>
+<UF>GO</UF>
+<CEP>75901551</CEP>
+<cPais>1058</cPais>
+<xPais>BRASIL</xPais>
+<fone>1132161000</fone>
+</enderEmit>
+<IE>107022940</IE>
+<CRT>3</CRT>
+</emit>
+<dest>
+<CNPJ>21294708000415</CNPJ>
+<xNome>CJ INTERNATIONAL BRASIL COM. AGRICOLA LTDA. - RIO VERDE</xNome>
+<enderDest>
+<xLgr>AVENIDA PRESIDENTE VARGAS</xLgr>
+<nro>266</nro>
+<xCpl>SALA 804</xCpl>
+<xBairro>JARDIM MARCONAL</xBairro>
+<cMun>5218805</cMun>
+<xMun>RIO VERDE</xMun>
+<UF>GO</UF>
+<CEP>75901551</CEP>
+<cPais>1058</cPais>
+<xPais>BRASIL</xPais>
+<fone>1132161000</fone>
+</enderDest>
+<indIEDest>1</indIEDest>
+<IE>107022940</IE>
+<email>tax.br@cjtrade.net</email>
+</dest>
+<retirada>
+<CNPJ>00671009000558</CNPJ>
+<xNome>BRASCEN BRASIL CENTRAL ALIMENTOS LTDA</xNome>
+<xLgr>RODOVIA ESTADUAL GO 320, QUADRA 29 LOTE 001</xLgr>
+<nro>S/N</nro>
+<xCpl>KM 74,5</xCpl>
+<xBairro>SETOR INDUSTRIAL</xBairro>
+<cMun>5222054</cMun>
+<xMun>VICENTINOPOLIS</xMun>
+<UF>GO</UF>
+<CEP>75555000</CEP>
+<cPais>1058</cPais>
+<xPais>BRASIL</xPais>
+<fone>5564999967540</fone>
+<email>mathews.brascen@gmail.com</email>
+<IE>104605294</IE>
+</retirada>
+<det nItem="1">
+<prod>
+<cProd>925</cProd>
+<cEAN>SEM GTIN</cEAN>
+<xProd>SOJA GMO</xProd>
+<NCM>12019000</NCM>
+<cBenef>GO800001</cBenef>
+<CFOP>6505</CFOP>
+<uCom>KG</uCom>
+<qCom>30940.000</qCom>
+<vUnCom>1.9800000000</vUnCom>
+<vProd>61261.20</vProd>
+<cEANTrib>SEM GTIN</cEANTrib>
+<uTrib>TON</uTrib>
+<qTrib>30.940</qTrib>
+<vUnTrib>1980.0000000000</vUnTrib>
+<indTot>1</indTot>
+</prod>
+<imposto>
+<ICMS>
+<ICMS40>
+<orig>0</orig>
+<CST>41</CST>
+</ICMS40>
+</ICMS>
+<PIS>
+<PISNT>
+<CST>08</CST>
+</PISNT>
+</PIS>
+<COFINS>
+<COFINSNT>
+<CST>08</CST>
+</COFINSNT>
+</COFINS>
+</imposto>
+</det>
+<total>
+<ICMSTot>
+<vBC>0.00</vBC>
+<vICMS>0.00</vICMS>
+<vICMSDeson>0.00</vICMSDeson>
+<vFCP>0.00</vFCP>
+<vBCST>0.00</vBCST>
+<vST>0.00</vST>
+<vFCPST>0.00</vFCPST>
+<vFCPSTRet>0.00</vFCPSTRet>
+<vProd>61261.20</vProd>
+<vFrete>0.00</vFrete>
+<vSeg>0.00</vSeg>
+<vDesc>0.00</vDesc>
+<vII>0.00</vII>
+<vIPI>0.00</vIPI>
+<vIPIDevol>0.00</vIPIDevol>
+<vPIS>0.00</vPIS>
+<vCOFINS>0.00</vCOFINS>
+<vOutro>0.00</vOutro>
+<vNF>61261.20</vNF>
+</ICMSTot>
+</total>
+<transp>
+<modFrete>0</modFrete>
+<transporta>
+<CNPJ>17877334000221</CNPJ>
+<xNome>RODOFROTA TRANSPORTES RODOVIARIOS E LOGISTICA LTDA - EPP</xNome>
+<IE>105729850</IE>
+<xEnder>R.:JOSE SEVERINO,280</xEnder>
+<xMun>CATALAO</xMun>
+<UF>GO</UF>
+</transporta>
+<vol>
+<qVol>1</qVol>
+<esp>KG</esp>
+<pesoL>30940.000</pesoL>
+<pesoB>30941.000</pesoB>
+</vol>
+</transp>
+<pag>
+<detPag>
+<indPag>1</indPag>
+<tPag>90</tPag>
+<vPag>0.00</vPag>
+</detPag>
+</pag>
+<infAdic>
+<infCpl>Usuario: FRV Emb: 5110871 Local Emb/Ret: BRASCEN BRASIL CENTRAL ALIMENTOS LTDA OPERACAO VINCULADA A EXPORTACAO: Unid. Medida Tributada: TON Quant. Tributada: 30,940 Vl. Unit. Tributado: R$1980,00 Nr. Lancto: 52530 925 - GO - NAO INCIDENCIA DO ICMS CONFORME ART. 79, INCISO I, ALINEA A, 1, ALINEA A DO RICMS-GO.TERMO DE CREDENCIAMENTO DA IN 180/2019 N.94927 VALIDO ATE 10/08/2024 -925 - OPERACAO NAO ALCANCADA PELA TRIBUTACAO DAS PIS E COFINS CONFORME AS LEIS 10.6367/2002 E 10.833/2003. MOTORISTA: DILSEU FORMIGHIERI. LOCAL DE EMBARQUE: BRASCEN BRASIL CENTRAL ALIMENTOS LTDA VICENTINOPOLIS-GO, CPF/CNPJ: 00.671.009/0005-58 CHAVE DE ACESSO: 52240600671009000558550010000428581159418477, NR.NOTA 42858, MERCADORIA SOFRERA TRANSBORDO DO MODAL RODOVIARIO PARA FERROVIARIO NO TERMINAL DA , MERCADORIA SERA ENTREGUE NO TERMINAL TESC - TERMINAL SANTA CATARINA S.A (C.N.P.J.: 01115535/0001-70), ENGENHEIRO LEITE RIBEIRO, CENTRO, 89240000 RECINTO ALFANDEGADO: Convenio ICMS 83/06 e 84/2009. MERCADORIA RETIRADA NA BRASCEN BRASIL CENTRAL ALIMENTOS LTDA inscrito no CPF/CNPJ sob o n 00.671.009/0005-58 , localizado , Rod GO 320, KM 74,5, Setor Industrial, localizado no Municipio de Vicentinopolis, GO.MERCADORIA SERA DESCARREGADA NO TERMINAL TESC - TERMINAL SANTA CATARINA S/A - AV ENGENHEIRO LEITE RIBEIRO, 90 - CENTRO - SAO FRANCISCO DO SUL/SC - ATO DECLARATORIO 10921.000386/2002-91. PLACA CAVALO: BEB7B98(GO) / CIF PESO BRUTO.: 30.941 KG SUBTOTAL....: 30.940 KG 30,94 TONPESO TARA..: 1 KG RESULTADO DESCONTO :...................................................................... UMIDADE........... 0 KG...................................................................... AVARIADO..........: 0 KGPESO LIQ. POS DESCONTOS: GRAOS VERDES......: 0 KGSOJA GMO: 30.940 KG QTDE LIQUIDA EM TON 30,94 TON INTACTA PARTICIPAN: 0 KG</infCpl>
+<obsCont xCampo="Placa">
+<xTexto>BEB7B98</xTexto>
+</obsCont>
+<obsCont xCampo="UF">
+<xTexto>GO</xTexto>
+</obsCont>
+</infAdic>
+</infNFe>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+<Reference URI="#NFe52240621294708000415550020000707301000525309">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+<Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+<DigestValue>PpgMnDMPuhZ2fiGjyQbK/qnBzR4=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>NQj/trDjIW1xCKBdkMNaEqEzzhjlkyeaTFrtIpWq5tqgiEanQ8ferFAYFY2FfCXIkmOrzrO17++DR/Ar/ZKXTcER3JAEHK5cO6QYa7QUiqUtqGYBXEiX4CcUNm/nDFOCqW3PLHuJ2fZJB+qpvttKQeYhC+KtEZNscyEZwGp9pzi7/SyYXHNY+lr1LUXXO8PFp8JM3UZMU3VcEEWkIEP9R4tWiiRurjjO6H8nLso777V9Gi90drAH4cMyNMkBdTU7cU83xBZjrFt2aFFzkgZRTG0qmPnOyFd/hCI9Rnk5sW7a+uE2cDCNewXO1enlbYGcawzVsx5XOF77gol8cwqrgw==</SignatureValue>
+<KeyInfo>
+<X509Data>
+<X509Certificate>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</X509Certificate>
+</X509Data>
+</KeyInfo>
+</Signature>
+</NFe>
+<protNFe versao="4.00">
+<infProt Id="${randomInfProtId}">
+<tpAmb>1</tpAmb>
+<verAplic>GO4.0</verAplic>
+<chNFe>${randomChNFe}</chNFe>
+<dhRecbto>2024-06-07T15:20:04-03:00</dhRecbto>
+<nProt>${randomNProt}</nProt>
+<digVal>${randomDigVal}/qnBzR4=</digVal>
+<cStat>100</cStat>
+<xMotivo>Autorizado o uso da NF-e</xMotivo>
+</infProt>
+</protNFe>
+</nfeProc> 
+      `;
+
+
+      const blob = new Blob([xmlContent], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const fileName = `${randomChNFe}.xml`; 
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName; 
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    function generateRandomChNFe() {
+      const length = 44;
+      let result = '';
+      const characters = '0123456789';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
+    function generateRandomNProt() {
+      const length = 15; 
+      let result = '';
+      const characters = '0123456789';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
+    function generateRandomDigVal() {
+      const length = 24; 
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'; // Base64
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result + '=';
+    }
+
+    function generateRandomInfProtId() {
+        const length = 15; 
+        let result = '';
+        const characters = '0123456789'; 
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+      }
+  </script>
+</body>
+</html>
